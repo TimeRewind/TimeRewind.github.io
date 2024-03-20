@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="TimeRewind: Rewinding Time with Image-and-Events Video Diffusion">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TimeRewind: Rewinding Time with Image-and-Events Video Diffusion</title>
+
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-size-2 publication-title">TimeRewind: Rewinding Time with Image-and-Events Video Diffusion</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://codingrex.github.io/">Jingxi Chen</a><sup>1</sup>,
+              <a href="https://brandonyfeng.github.io/">Brandon Y. Feng</a><sup>2</sup>,
+              <a href="https://www.haomingcai.com/">Haoming Cai</a><sup>1</sup>, 
+              <a href="https://mingyangx.github.io/">Mingyang Xie</a><sup>1</sup>,
+              <a href="http://www.cs.umd.edu/~metzler/">Christopher Metzler</a><sup>1</sup>,
+              <a href="http://users.umiacs.umd.edu/~fer/">Cornelia Fermüller</a><sup>1</sup>,
+              <a href="https://robotics.umd.edu/clark/faculty/350/Yiannis-Aloimonos">Yiannis Aloimonos</a><sup>1</sup>
+
+
+
+              
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <span class="author-block"><sup>1</sup>University of Maryland, College Park,</span>
+              <span class="author-block"><sup>2</sup>Massachusetts Institute of Technology</span>
+              
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <span class="link-block">
+                  <a href="https://arxiv.org/"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+              
+                <span class="link-block">
+                  <a href="https://github.com/"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Comming Soon)</span>
+                    </a>
+                </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero teaser" >
+  <div class="container is-max-desktop"></div>
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3"> Rewinding Time with Image-and-Events Video Diffusion</h2>
+      </h2>
+  </div>
+</div>
+
+</section>
+
+<div style="margin-bottom: -30px;"></div> 
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    
+
+    <!-- Visual Effects. -->
+    <div class="column">
+      <div class="content">
+
+
+        <img src="./static/images/Intro.png"
+                 class="interpolation-image"
+                 alt="methods"/>
+
+        <p>
+
+          <i>TimeRewind</i> synthesizes the video backward into the pre-capture time with 
+          image-and-events video diffusion.
+          </a>
+
+      </p>
+
+      <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+        <source src="./static/videos/teaser_web.mp4"
+                type="video/mp4">
+                
+      </video>
+      
+        
+
+      
+      </div>
+    </div>
+ 
+    </div>
+
+    <div style="margin-bottom: 50px;"></div> 
+    <section class="hero teaser">
+      <div class="container is-max-desktop"></div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3"> Comparison with Standard SVD and Baselines</h2>
+          </h2>
+      </div>
+    </div>
+
+</section>
+
+<div style="margin-bottom: -30px;"></div> 
+<section class="section" >
+
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+      
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+<!-- 
+          <p>
+            
+            The following visual results clearly show that the TimeRewind method excels in synthesizing pre-capture videos, 
+            achieving motion that realistically aligns with the reference videos.
+          </p> -->
+
+          <!-- <p>
+            Unlike the standard SVD [5], which inherently synthesizes forward-time videos due to biases in its training data, our method excels in backward-time video synthesis. 
+            This distinction is particularly evident in Sequence 1, where SVD predicts the forward motion contrary to the backward movement of a horse, revealing a fundamental limitation in capturing reverse temporal dynamics.
+                    
+          <p>
+
+          <p>
+            Furthermore, SVD struggles with complex motion scenarios, 
+            such as fluid and particle dynamics, because it lacks precise motion guidance. 
+            This issue becomes prominent in Sequence 2, where SVD avoids generating motion for fluid mediums, inaccurately shifts to camera motion to fulfill motion requirements.
+                      
+          <p>
+
+            <p>
+              Only the standard SVD effectively prevents the generation of "fog-like", noisy, and blurred videos in before-capture-time synthesis, 
+              in contrast to approaches such as E2VID+* [48], EVDI* [59], and REFID* [48].
+              The latter models tend to produce videos with blurred textures and pixel deformations, lacking high-level content consistency, to naively match the target videos. This highlights the limitations of these common architectures in generating content-coherent videos from an initial image. 
+                        
+            <p> -->
+
+              <p>
+               Comparison with Standard SVD and baselines, E2VID+* [48], EVDI* [59], and REFID* [48].  
+              <p>
+
+          
+
+              <p>
+                Below are backward-time videos synthesized from the reference video's last frame and events.   
+              </p>
+
+
+           Sequence 1:
+          
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Compare_2.mp4"
+                    type="video/mp4">
+                    
+          </video>
+        </p>
+        <p>
+          Sequence 2:
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Compare_1.mp4"
+                    type="video/mp4">
+
+        </p>
+
+        
+        </div>
+      </div>
+    </div>
+
+
+  
+</section>
+   
+<div style="margin-top: 50px;"></div> 
+<section class="hero teaser">
+      <div class="container is-max-desktop"></div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3"> Experimental Results</h2>
+          </h2>
+      </div>
+    </div>
+
+</section>
+
+<div style="margin-bottom: -30px;"></div> 
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-5">Simple Motion Scenarios</h2>
+          <p>
+            The motion in before-the-capture time mostly comes from a few <i>rigid body objects</i>.
+          </p>
+
+          <p>
+            Note that since our task is backward-time video synthesis, the motion in the video is the reverse of original.
+                      
+          </p>
+
+          <p>
+            Below are backward-time videos synthesized from the reference video's last frame and events.   
+          </p>
+      
+
+        
+        <p>
+
+           Sequence 1:
+          
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Simple_2.mp4"
+                    type="video/mp4">
+                    
+          </video>
+        </p>
+        <p>
+          Sequence 2:
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Simple_4.mp4"
+                    type="video/mp4">
+
+        </p>
+        <p>
+          Sequence 3:
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Simple_3.mp4"
+                    type="video/mp4">
+
+        </p>
+        <p>
+          Sequence 4:
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/Simple_1.mp4"
+                    type="video/mp4">
+
+        </p>
+          
+
+        
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-5">Moderately Complex Motion Scenarios</h2>
+          <p>
+            The motion in before-the-capture time is either due to <i> animals and humans performing actions </i>
+            or scenarios with <i>both the camera and the objects moving</i>.
+          </p>
+
+          <p>
+            Note that since our task is backward-time video synthesis, the motion in the video is the reverse of original.
+                      
+          </p>
+
+          <p>
+            Below are backward-time videos synthesized from the reference video's last frame and events.   
+          </p>
+
+          <p>
+           Sequence 1:
+          
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mid_1.mp4"
+                    type="video/mp4">
+                    
+          </video>
+        </p>
+        <p>
+          Sequence 2:
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mid_2.mp4"
+                    type="video/mp4">
+
+        </p>
+        <p>
+          Sequence 3:
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mid_3.mp4"
+                    type="video/mp4">
+
+        </p>
+        <p>
+          Sequence 4:
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mid_4.mp4"
+                    type="video/mp4">
+
+        </p>
+          
+
+        
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="columns is-centered">
+
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-5">Physically Complex Motion Scenarios</h2>
+          <p>
+            The motion in before-the-capture time is either 
+            due to a <i> dynamic fluid (water stream, fire) </i>  or <i> complex particle motion under force </i> .
+          </p>
+
+          <p>
+            Note that since our task is backward-time video synthesis, the motion in the video is the reverse of original.
+                      
+          </p>
+
+          <p>
+            Below are backward-time videos synthesized from the reference video's last frame and events.   
+          </p>
+
+          
+          <p>          
+           Sequence 1:
+          
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/hard_1.mp4"
+                    type="video/mp4">
+                    
+          </p>
+
+          
+        <p>
+          Sequence 2:
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/hard_2.mp4"
+                    type="video/mp4">
+
+        </p>
+        <p>
+          Sequence 3:
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/hard_3.mp4"
+                    type="video/mp4">
+
+        </p>
+        <p>
+          Sequence 4:
+
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/hard_4.mp4"
+                    type="video/mp4">
+
+        </p>
+          
+
+        
+        </div>
+      </div>
+    </div>
+
+
+  
+    <div style="margin-top: 50px;"></div> 
+    <section class="hero teaser">
+      <div class="container is-max-desktop"></div>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3"> Method</h2>
+          </h2>
+      </div>
+    </div>
+    <div style="margin-bottom: -10px;"></div> 
+
+    <p>
+
+      Illustration of our proposed TimeRewind approach 
+      as an adaptor for the general Img2Vid architectures. The components shown in shades of blue (both dark and light) represent the elements of the original pre-trained model, which remain unchanged during our training process. The orange-colored components are specific to our TimeRewind and are being optimized throughout the training. 
+  
+    </p>
+
+    
+
+  
+    <img src="./static/images/Methods.png"
+                 class="interpolation-image"
+                 alt="methods"/>
+    
+    </section>
+    
+
+
+     
+  
+  
+
+    <!--/ Animation. -->
+
+
+
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            The reference videos on the webpage use the BS-ERGB dataset [50].
+          </p>
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The webpage template is borrowed from  <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies</a> template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
